@@ -1,0 +1,29 @@
+header {
+  background-color: #2B2733;
+  color: #FFF;
+}
+
+h1 {
+  color: #FFF;
+}
+
+h2 {
+  color: #CBC9CF;
+}
+
+h3 {
+  color: #FFF;
+}
+
+main {
+  background-color: #2B2733;
+  color: #CBC9CF;
+}
+
+p {
+  color: #fff;
+}
+
+.user-interaction {
+  background-color: #46424d;
+}
