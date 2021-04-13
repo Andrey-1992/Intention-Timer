@@ -19,10 +19,14 @@ h2 {
 h3 {
   color: #FFF;
   font-weight: 300;
+  font-size: 18px;
 }
 
 p {
-  color: #fff;
+  color: #cbc9cf;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 
@@ -35,9 +39,9 @@ body {
 .user-interaction {
   background-color: #46424d;
   padding-top: 30px;
-  padding-right: 60px;
+  padding-right: 100px;
   padding-bottom: 30px;
-  padding-left: 60px;
+  padding-left: 100px;
 }
 
 .box1 {
@@ -51,10 +55,18 @@ body {
   padding: 20px;
 }
 
+.past-act-msg {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 button {
-  width: 140px;
-  margin-right: 50px;
-  height: 60px;
+  width: 180px;
+  height: 80px;
   background-color: transparent;
   color: #fff;
   border: 2px solid #fff;
@@ -89,6 +101,7 @@ input[type=text] {
   color: #CBC9CF;
   background-color: transparent;
   width: 100%;
+  font-size: 18px;
 }
 
 .times {
@@ -111,6 +124,6 @@ main {
   background-color: #2B2733;
   color: #CBC9CF;
   display: flex;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
