@@ -25,14 +25,6 @@ p {
   color: #fff;
 }
 
-main {
-  background-color: #2B2733;
-  color: #CBC9CF;
-  display: flex;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-}
-
 
 body {
   margin: 0px;
@@ -57,4 +49,42 @@ body {
   flex: 1;
   border-left: 2px solid #46424d;
   padding: 20px;
+}
+
+button {
+  width: 140px;
+  margin-right: 50px;
+  height: 60px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+  width: 15%;
+}
+
+.user-specs-btn {
+  background-color: #fff;
+  color: #2B2733;
+  white-space: nowrap;
+  font-size: 18px;
+  height: 40px;
+  width: 220px;
+}
+
+.start-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main {
+  background-color: #2B2733;
+  color: #CBC9CF;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }

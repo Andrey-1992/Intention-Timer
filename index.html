@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='./styles.css'>
-    <title>Intentation-Timer</title>
+    <title>Intention-Timer</title>
   </head>
    <header>
-    <h1>Intentation Timer</h1>
+    <h1>Intention Timer</h1>
    </header>
    <body>
     <main>
@@ -15,9 +16,9 @@
       <section class='user-interaction'>
          <div class='category-type'>
            <h3>Select a category:</h3>
-           <button class='study-cat-btn'>Study</button>
-           <button class='meditate-cat-btn'>Meditate</button>
-           <button class='exercises-cat-btn'>Exercise</button>
+           <button id='study-cat-btn'><img class="icon" src="assets/study.svg"><br>Study</button>
+           <button id='meditate-cat-btn'><img class="icon" src="assets/meditate.svg"><br>Meditate</button>
+           <button id='exercises-cat-btn'><img class="icon" src="assets/exercise.svg"><br>Exercise</button>
          </div>
          <div class='user-specs'>
           <form class='user-inputs'>
@@ -28,7 +29,9 @@
            <h3>Seconds</h3>
            <input class='sec-input'/>
           </form>
+          <div class="start-button">
           <button class='user-specs-btn'>START ACTIVITY</button>
+          </div>
          </div>
       </section>
      </section>
