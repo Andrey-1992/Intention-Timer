@@ -57,6 +57,7 @@ The checklist below matches the project spec. All pictures can be found in the c
 
 ## Iteration 3 - Build an MVP
 ### 🛑  STOP! Iteration 3 - Build an MVP 🛑 
+- [ ] Wireframe Iteration 3
 - [ ] The user can start the time by clicking Start.
 - [ ] While timer is running, the user should see it count down by second.
 - [ ] When the timer completes, an `alert` should appear in the browser, letting the user know that the time is up and the activity has been completed.
@@ -64,6 +65,7 @@ The checklist below matches the project spec. All pictures can be found in the c
 
 ## Iteration 4 - Logging Past Activities
 ### 🛑  STOP! Did you refactor Iteration 3? Clean up your code before moving on! 🛑 
+- [ ] Wireframe Iteration 4
 - [ ] When the timer completes, the `alert` no longer appears.
 - [ ] Instead, a motivational or congratulatory message appears on the left side of the page, replacing the timer.
 - [ ] When the user acknowledges the message and completion of the activity by clicking `Log Activity` - 
@@ -73,6 +75,7 @@ The checklist below matches the project spec. All pictures can be found in the c
 
 ## Iteration 5 - Persisting past activities
 ### 🛑  STOP! Did you refactor Iteration 4? Clean up your code before moving on! 🛑 
+- [ ] Wireframe Iteration 5
 - [ ] When the user refreshes the page,
     - [ ] Their past activities are still displayed!
     - [ ] Hint: localStorage could come in handy here…
@@ -80,17 +83,21 @@ The checklist below matches the project spec. All pictures can be found in the c
 # Optional Extensions
 ### Remember, do not move on to any of these extensions if functionality from the previous iterations is not complete or bug-free.
 - [ ] **Option 1:** Expand/Collapse Reflection
+    - [ ] Wireframe Option 1
     - [ ] When timer completes but before a card is created, the user can submit a reflection on the way they spent that time. Then, they can click the Log
     - [ ] Activity button to create the card.
     - [ ] Even though there is more information about the activity, the reflection should not appear on the card immediately. The cards should still match the comp. The user should have a visual indicator that there is “more info” on a card. When the user takes the appropriate action, the card expands to show the reflection the user had submitted.
     - [ ] The user should also have a way to collapse the additional information/reflection.
 - [ ] **Option 2:** Favorite & Re-Do
+    - [ ] Wireframe Option 2
     - [ ] A user should be able to favorite or re-do an activity.
     - [ ] A favorite icon should be on the card. When clicked, the icon should change its appearance to communicate it has been favorited.
     - [ ] An icon to represent re-do should also be on the card. It should only be enabled when the left side of the page is displaying the New Activity form. If the re-do button is clicked, the form will populate with the data from the card that was clicked on.
 - [ ] **Option 3:** Pausing the Timer
+    - [ ] Wireframe Option 3
     - [ ] After the timer begins, a user should be able to pause the timer and resume an activity when they wish
 - [ ] **Option 4:** Animate the Timer
+    - [ ] Wireframe Option 1
     - [ ] Animate the border around the timer in a way that communicates how much time is left.
 
 **Consider the user experience:** the actions a user needs to take should be intuitive for someone who has never seen this application before. [Smashing Magazine](https://www.smashingmagazine.com/) contains great resources and articles, but their homepage also has some great examples of classy animations and hover states that convey something to the user.
