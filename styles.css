@@ -74,11 +74,37 @@ button {
   font-size: 18px;
   height: 40px;
   width: 220px;
+  margin-top: 60px;
+  margin-right: 0px;
 }
 
 .start-button {
   display: flex;
   justify-content: flex-end;
+}
+
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid #cbc9cf;
+  color: #CBC9CF;
+  background-color: transparent;
+  width: 100%;
+}
+
+.times {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.min {
+  margin-right: 60px;
+  flex: 1;
+}
+
+.sec {
+  flex: 1;
+  margin-left: 60px;
 }
 
 main {
