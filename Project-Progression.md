@@ -1,20 +1,20 @@
 The checklist below matches the project spec. All pictures can be found in the complete spec [here](https://frontend.turing.io/projects/module-1/intention-timer-group.html).
 
 # Contents
- - Iteration 0
- - Iteration 1
- - Iteration 2
- - Iteration 3
- - Iteration 4
- - Iteration 5
- - Optional Extensions - _do not complete without completing the above 5 iterations_
- - Comp Details; colors, icons, fonts
- - Rubric
-    - Professionalism
-    - Comp Recreation
-    - HTML & CSS - Style & Implementation
-    - JavaScript - STyle & Implementation
-    - Functional Expectations
+ - [Iteration 0](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#iteration-0---zero-state)
+ - [Iteration 1](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#iteration-1---activity-class)
+ - [Iteration 2](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#iteration-2---form-functionality)
+ - [Iteration 3](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#iteration-3---build-an-mvp)
+ - [Iteration 4](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#iteration-4---logging-past-activities)
+ - [Iteration 5](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#iteration-5---persisting-past-activities)
+ - [Optional Extensions](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#optional-extensions) - _do not complete without completing the above 5 iterations_
+ - [Comp Details](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#comp-details); colors, icons, fonts
+ - [Rubric](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#rubric)
+    - [Professionalism](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#professionalism)
+    - [Comp Recreation](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#comp-recreation)
+    - [HTML & CSS - Style & Implementation](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#html--css---style-and-implementation)
+    - [JavaScript - STyle & Implementation](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#javascript---style-and-implementation)
+    - [Functional Expectations](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#functional-expectations)
 
 ## Iteration 0 - Zero State
 - [ ] Build out a PR Template
@@ -97,7 +97,7 @@ The checklist below matches the project spec. All pictures can be found in the c
 
 Before moving on to an extension, the site should match the comp and any additions should be in the spirit of the comp and have been user-tested from a great user experience (UX).
 
-## Comp Details
+# Comp Details
 
 ### Colors
 - [ ] Main background: #2B2733
@@ -117,7 +117,7 @@ Before moving on to an extension, the site should match the comp and any additio
 [Montserrat](https://fonts.google.com/?query=mont&selection.family=Montserrat:300,400), both 300 and 400 weights are used in the comp. You’ll need to link this in the HTML.
 
 
-## Rubric
+# Rubric
 This rubric should serve as a guide for students as they progress through the project, as well as to self-evaluate. Instructors will use it to evaluate the project at its final due date/time, and provide detailed feedback so students know what areas to focus on in future projects.
 
 Scores land in a range between 1 and 4. Below is a breakdown of what those numbers represent.
