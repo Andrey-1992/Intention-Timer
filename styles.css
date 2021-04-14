@@ -1,7 +1,4 @@
-header {
-  background-color: #46424d;
-  color: #FFF;
-}
+/* HEADERS  */
 
 h1 {
   color: #FFF;
@@ -26,6 +23,13 @@ h3 {
   font-size: 18px;
 }
 
+header {
+  background-color: #46424d;
+  color: #FFF;
+}
+
+/* Body */
+
 p {
   color: #cbc9cf;
   font-size: 16px;
@@ -33,13 +37,19 @@ p {
   margin-top: 5px;
 }
 
-
-
 body {
   margin: 0px;
   background-color: #2B2733;
   font-weight: 300;
 }
+
+/* LEFT SECTION */
+
+.box1 {
+  flex: 2;
+  padding: 20px;
+}
+
 
 .user-interaction {
   background-color: #46424d;
@@ -49,25 +59,11 @@ body {
   padding-left: 100px;
 }
 
-.box1 {
-  flex: 2;
-  padding: 20px;
-}
-
-.box2 {
-  flex: 1;
-  border-left: 2px solid #46424d;
-  padding: 20px;
-}
-
-.past-act-msg {
-  text-align: center;
-}
-
 .buttons {
   display: flex;
   justify-content: space-between;
 }
+
 
 button {
   width: 180px;
@@ -123,6 +119,18 @@ input[type=text] {
 .sec {
   flex: 1;
   margin-left: 60px;
+}
+
+/* RIGHT SECTION */
+
+.past-act-msg {
+  text-align: center;
+}
+
+.box2 {
+  flex: 1;
+  border-left: 2px solid #46424d;
+  padding: 20px;
 }
 
 main {
