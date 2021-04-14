@@ -9,6 +9,10 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 h2 {
@@ -30,9 +34,10 @@ p {
 }
 
 
+
 body {
   margin: 0px;
-  background-color: #46424d;
+  background-color: #2B2733;
   font-weight: 300;
 }
 
