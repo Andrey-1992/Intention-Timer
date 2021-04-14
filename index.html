@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='./style.css'>
-    <title>Intentation-Timer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Intention-Timer</title>
   </head>
    <header>
-    <h1>Intentation Timer</h1>
+    <h1>Intention Timer</h1>
    </header>
    <body>
     <main>
-     <section class='box1'>
+     <section class="box1">
       <h2>New Activity</h2>
-      <section class='user-interaction'>
-         <div class='category-type'>
+      <section class="user-interaction">
+         <div class="category-type">
            <h3>Select a category:</h3>
-           <button class='study-cat-btn'>Study</button>
-           <button class='meditate-cat-btn'>Meditate</button>
-           <button class='exercises-cat-btn'>Exercise</button>
+           <section class="buttons">
+             <button id="study-cat-btn"><img class="icon" src="assets/study.svg"><br>Study</button>
+             <button id="meditate-cat-btn"><img class="icon" src="assets/meditate.svg"><br>Meditate</button>
+             <button id="exercises-cat-btn"><img class="icon" src="assets/exercise.svg"><br>Exercise</button>
+           </section>
          </div>
-         <div class='user-specs'>
-          <form class='user-inputs'>
-           <label for='accomplish'>What would you like to accomplish during this time?</label>
-           <input class='accomplish-task' type='text'/>
-           <label for='minutes'>Minutes</label>
-           <input class='min-input'/>
-           <label for='seconds'>Seconds</label>
-           <input class='sec-input'/>
+         <section class="user-specs">
+          <form class="user-inputs">
+           <h3>What would you like to accomplish during this time?</h3>
+           <input class="accomplish-task" type="text"/>
+           <div class="times">
+             <section class="min">
+               <h3>Minutes</h3>
+               <input class="min-input" type="text"/>
+             </section>
+             <section class="sec">
+                 <h3>Seconds</h3>
+                 <input class="sec-input" type="text"/>
+             </section>
+            </div>
           </form>
-          <button class='user-specs-btn'>START ACTIVITY</button>
-         </div>
+          <div class="start-button">
+          <button class="user-specs-btn">START ACTIVITY</button>
+          </div>
+        </section>
       </section>
      </section>
-     <section class='box2'>
+     <section class="box2">
        <h2>Past Activities</h2>
-       <div class='past-act-msg'>
-         <p>You haven't logged any activities yet</p>
+       <div class="past-act-msg">
+         <p>You haven't logged any activities yet.</p>
          <p>Complete the form to the left to get started!</p>
        </div>
      </section>
     </main>
-   </body>
-  <script src='./main.js'></script>
+  </body>
+  <script src="./main.js"></script>
 </html>
