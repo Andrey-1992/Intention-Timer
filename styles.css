@@ -88,6 +88,16 @@ button {
   color: #b3fd78;
 }
 
+.meditate-active {
+  border: 2px solid #c278fd;
+  color: #c278fd;
+}
+
+.exercise-active {
+  border: 2px solid #fd8078;
+  color: #fd8078;
+}
+
 .user-specs {
   padding-top: 30px;
 }
