@@ -14,6 +14,11 @@ var secWarning = document.getElementById('secWarning');
 var btnWarning = document.getElementById('btnWarning');
 var mainView = document.getElementById('mainView');
 var timerView = document.getElementById('timerView');
+var timerDesc = document.getElementById('description');
+var timerMin = document.getElementById('clockMinutes');
+var timerSec = document.getElementById('clockSeconds');
+var startTimerButton = document.getElementById('startTimerBtn');
+var activityTitle = document.getElementById('activityTitle');
 
 var currentActivity;
 var pastActivities = [];
@@ -106,4 +111,19 @@ function createActivity() {
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
   pastActivities.push(currentActivity);
+  displayUserInput();
+}
+
+function displayUserInput() {
+  activityTitle.innerText = 'Current Activity';
+  timerDesc.innerText = currentActivity.description;
+  timerMin.innerText = currentActivity.minutes;
+  timerSec.innerText = currentActivity.seconds;
+  if (currentActivity.category === 'study') {
+    startTimerButton.classList.add('study-timer');
+  } else if (currentActivity.category === 'meditate') {
+    startTimerButton.classList.add('meditate-timer');
+  } else {
+    startTimerButton.classList.add('exercise-timer');
+  }
 }

@@ -1,9 +1,11 @@
 /* HEADERS  */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 
 h1 {
   color: #FFF;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   padding-top: 20px;
@@ -76,7 +78,7 @@ button {
   border-radius: 4px;
   margin-bottom: 20px;
   font-size: 18px;
-  /* font-family: 'Montserrat', sans-serif; */
+  cursor: pointer;
 }
 
 .icon {
@@ -126,6 +128,7 @@ button {
 .start-button {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 input {
@@ -186,6 +189,7 @@ input {
   height: 200px;
   border-radius: 50%;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .study-timer {
@@ -217,7 +221,6 @@ main {
   background-color: #2B2733;
   color: #CBC9CF;
   display: flex;
-  font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
 
