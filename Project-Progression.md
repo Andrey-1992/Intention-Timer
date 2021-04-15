@@ -17,41 +17,40 @@ The checklist below matches the project spec. All pictures can be found in the c
     - [Functional Expectations](https://github.com/Andrey-1992/Intention-Timer/blob/main/Project-Progression.md#functional-expectations)
 
 ## Iteration 0 - Zero State
-- [ ] Build out a PR Template
-- [ ] Wireframe Iteration 0
-- [ ] Build the layout with HTML & CSS
-    - [ ] Before moving on, the header and left side of the page should match the comp.
-    - [ ] The right side of the page should only have the sub-header and note that no activities exist since you do not have past activity card functionality yet!
+- [x] Build out a PR Template
+- [x] Wireframe Iteration 0
+- [x] Build the layout with HTML & CSS
+    - [x] Before moving on, the header and left side of the page should match the comp.
+    - [x] The right side of the page should only have the sub-header and note that no activities exist since you do not have past activity card functionality yet!
 
 
 ## Iteration 1 - Activity Class
 ### 🛑  STOP! Did you refactor Iteration 0? Clean up your code before moving on! 🛑 
 - [ ] Wireframe Iteration 1
-- [ ] Build out the Activity class
-  - [ ] Properties should include:
-      - [ ] category
-      - [ ] description
-      - [ ] minutes
-      - [ ] seconds
-      - [ ] completed
-      - [ ] id
+- [x] Build out the Activity class
+  - [x] Properties should include:
+      - [x] category
+      - [x] description
+      - [x] minutes
+      - [x] seconds
+      - [x] completed
+      - [x] id
 
-  - [ ] Methods should include:
-    - [ ] countdown (or beginTimer or startTimer - whatever naming makes sense to you)
-    - [ ] markComplete
-    - [ ] saveToStorage
+  - [x] Methods should include:
+    - [x] countdown (or beginTimer or startTimer - whatever naming makes sense to you)
+    - [x] markComplete
+    - [x] saveToStorage
   
-  - [ ] Make sure that you link this file in your index.html using a script tag, above the link to your main.js file.
+  - [x] Make sure that you link this file in your index.html using a script tag, above the link to your main.js file.
 
 
 ## Iteration 2 - Form Functionality
 ### 🛑  STOP! Did you refactor Iteration 1? Clean up your code before moving on! 🛑 
-- [ ] Wireframe Iteration 2
-- [ ] Form Functionality
-  - [ ] When an activity category is clicked on (`Exercise`, `Meditate`, or `Study`), the associated border and icon should change colors to give a visual indication that it has been selected. _Colors are provided in comp._
-  - [ ] An input field should be provided for `What would you like to accomplish during this time?`, `minutes` and `seconds`. The `minutes` and `seconds` fields should only accept numbers. (Hint: more than one layer should probably be put into place to ensure this. Make sure that e cannot be accepted.)
-  - [ ] A user should see an error message if they attempt to submit the form without filling out all fields. (Note: The comp shows the error message for forgetting a description - You should mimic this error messaging for all inputs.)
-  - [ ] A `Start Activity` button is provided to submit the data entered into the form. When the button is clicked, update your data model with an instance of the Activity class.
+- [x] Form Functionality
+  - [x] When an activity category is clicked on (`Exercise`, `Meditate`, or `Study`), the associated border and icon should change colors to give a visual indication that it has been selected. _Colors are provided in comp._
+  - [x] An input field should be provided for `What would you like to accomplish during this time?`, `minutes` and `seconds`. The `minutes` and `seconds` fields should only accept numbers. (Hint: more than one layer should probably be put into place to ensure this. Make sure that e cannot be accepted.)
+  - [x] A user should see an error message if they attempt to submit the form without filling out all fields. (Note: The comp shows the error message for forgetting a description - You should mimic this error messaging for all inputs.)
+  - [x] A `Start Activity` button is provided to submit the data entered into the form. When the button is clicked, update your data model with an instance of the Activity class.
   - [ ] When the `Start Activity` button is clicked, the user should no longer see the form, and instead see a timer clock. The timer clock should display the user-provided minutes and seconds, as well as the description. The category should not appear, but the outline of the circle should match the color associated with the category.
   - [ ] If the `Start Activity` button is clicked before the user has entered information into all four inputs, the user will receive an error message, but will not lose any information that was provided.
 
