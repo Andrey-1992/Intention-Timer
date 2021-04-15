@@ -93,10 +93,17 @@ function hide(element) {
 }
 
 function createActivity() {
-  hide(descWarning);
+  var activity;
+  if (studyButton.classList.contains('study-active')) {
+    activity = studyButton.value;
+  } else if (meditateButton.classList.contains('meditate-active')) {
+    activity = meditateButton.value;
+  } else {
+    activity = exerciseButton.value;
+  }
   var description = descriptionInput.value;
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
-  currentActivity = new Activity("activity", description, minutes, seconds);
+  currentActivity = new Activity(activity, description, minutes, seconds);
   pastActivities.push(currentActivity);
 }
