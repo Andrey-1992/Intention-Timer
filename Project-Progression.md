@@ -26,7 +26,6 @@ The checklist below matches the project spec. All pictures can be found in the c
 
 ## Iteration 1 - Activity Class
 ### 🛑  STOP! Did you refactor Iteration 0? Clean up your code before moving on! 🛑 
-- [ ] Wireframe Iteration 1
 - [x] Build out the Activity class
   - [x] Properties should include:
       - [x] category
