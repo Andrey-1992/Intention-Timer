@@ -11,6 +11,7 @@ var descriptionInput = document.getElementById('descriptionField');
 var descWarning = document.getElementById('descWarning');
 var minWarning = document.getElementById('minWarning');
 var secWarning = document.getElementById('secWarning');
+var btnWarning = document.getElementById('btnWarning');
 
 var currentActivity;
 var pastActivities = [];
@@ -67,6 +68,9 @@ function checkInput() {
   }
   if (!secondInput.value) {
     show(secWarning);
+  }
+  if (!studyIcon.value || !meditateIcon.value || !exerciseIcon.value) {
+    show(btnWarning);
   }
   if (descriptionInput.value && minuteInput.value && secondInput.value) {
     createActivity();
