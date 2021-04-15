@@ -83,6 +83,16 @@ button {
   width: 15%;
 }
 
+.warning-icon {
+  width: 1em;
+  margin-right: 0.5em;
+}
+
+.warning {
+  margin-top: 15px;
+  color: #efb7ec;
+}
+
 .study-active {
   border: 2px solid #b3fd78;
   color: #b3fd78;
@@ -125,6 +135,10 @@ input {
   background-color: transparent;
   width: 100%;
   font-size: 18px;
+}
+
+.input-warning {
+  border-bottom: 1px solid #efb7ec;
 }
 
 .times {
@@ -302,4 +316,8 @@ main {
     flex-wrap: wrap;
     flex-direction: column;
   }
+}
+
+.hidden {
+  display: none;
 }

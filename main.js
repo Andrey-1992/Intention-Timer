@@ -6,6 +6,7 @@ var meditateIcon = document.getElementById('meditateIcon');
 var exerciseIcon = document.getElementById('exerciseIcon');
 var minuteInput = document.getElementById('minuteField');
 var secondInput = document.getElementById('secondField');
+var descriptionInput = document.getElementById('descriptionField');
 
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);

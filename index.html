@@ -25,15 +25,18 @@
             <section class="user-specs">
               <form class="user-inputs">
                 <h3>What would you like to accomplish during this time?</h3>
-                <input class="accomplish-task" type="text">
+                <input class="accomplish-task" id="descriptionField" type="text">
+                <p class="warning hidden"><img src="./assets/warning.svg" class="warning-icon">A description is required.</p>
                 <div class="times">
                   <section class="min">
                     <h3>Minutes</h3>
                     <input class="min-input" id="minuteField" type="number">
+                    <p class="warning hidden"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
                   </section>
                   <section class="sec">
                     <h3>Seconds</h3>
                     <input class="sec-input" id="secondField" type="number">
+                    <p class="warning hidden"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
                   </section>
                 </div>
               </form>
