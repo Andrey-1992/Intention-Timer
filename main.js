@@ -13,7 +13,7 @@ var minWarning = document.getElementById('minWarning');
 var secWarning = document.getElementById('secWarning');
 
 var currentActivity;
-
+var pastActivities = [];
 
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
@@ -83,8 +83,9 @@ function hide(element) {
 
 function createActivity() {
   hide(descWarning);
-  console.log('hello');
   var description = descriptionInput.value;
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
+  currentActivity = new Activity('study', description, minutes, seconds);
+  pastActivities.push(currentActivity);
 }
