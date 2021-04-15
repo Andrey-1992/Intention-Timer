@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Intention-Timer</title>
   </head>
@@ -13,7 +13,7 @@
     <main>
       <section class="box1">
         <h2>New Activity</h2>
-          <section class="user-interaction">
+          <section class="user-interaction hidden">
             <div class="category-type">
               <h3>Select a category:</h3>
               <section class="buttons">
@@ -45,6 +45,11 @@
                 <button class="user-specs-btn" id="startActivityBtn">START ACTIVITY</button>
               </div>
             </section>
+          </section>
+          <section class="timer-view">
+            <h3 class="activity-desc" id="description">Placeholder</h3>
+            <p class="clock"><span id="clockMinutes">00</span>:<span id="clockSeconds">00</span></p>
+            <button type="input" class="start-timer" id="startTimerBtn">START</button>
           </section>
       </section>
       <section class="box2">
