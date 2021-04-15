@@ -26,22 +26,22 @@
               <form class="user-inputs">
                 <h3>What would you like to accomplish during this time?</h3>
                 <input class="accomplish-task" id="descriptionField" type="text">
-                <p class="warning hidden"><img src="./assets/warning.svg" class="warning-icon">A description is required.</p>
+                <p class="warning hidden" id="descWarning"><img src="./assets/warning.svg" class="warning-icon">A description is required.</p>
                 <div class="times">
                   <section class="min">
                     <h3>Minutes</h3>
                     <input class="min-input" id="minuteField" type="number">
-                    <p class="warning hidden"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
+                    <p class="warning hidden" id="minWarning"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
                   </section>
                   <section class="sec">
                     <h3>Seconds</h3>
                     <input class="sec-input" id="secondField" type="number">
-                    <p class="warning hidden"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
+                    <p class="warning hidden" id="secWarning"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
                   </section>
                 </div>
               </form>
               <div class="start-button">
-                <button class="user-specs-btn">START ACTIVITY</button>
+                <button class="user-specs-btn" id="startActivityBtn">START ACTIVITY</button>
               </div>
             </section>
           </section>

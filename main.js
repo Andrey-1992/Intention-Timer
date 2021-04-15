@@ -1,16 +1,22 @@
 var studyButton = document.getElementById('studyButton');
 var meditateButton = document.getElementById('meditateButton');
 var exerciseButton = document.getElementById('exerciseButton');
+var startActivityButton = document.getElementById('startActivityBtn');
 var studyIcon = document.getElementById('studyIcon');
 var meditateIcon = document.getElementById('meditateIcon');
 var exerciseIcon = document.getElementById('exerciseIcon');
 var minuteInput = document.getElementById('minuteField');
 var secondInput = document.getElementById('secondField');
 var descriptionInput = document.getElementById('descriptionField');
+var descWarning = document.getElementById('descWarning');
+var minWarning = document.getElementById('minWarning');
+var secWarning = document.getElementById('secWarning');
+
 
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
 exerciseButton.addEventListener('click', changeExerciseButton);
+startActivityButton.addEventListener('click', checkInput);
 minuteInput.addEventListener('keydown', preventInvalidEntry);
 secondInput.addEventListener('keydown', preventInvalidEntry);
 
@@ -35,5 +41,17 @@ function preventInvalidEntry(event) {
   if (invalidChars.includes(event.key)) {
     console.log(event);
     event.preventDefault();
+  }
+}
+
+function checkInput() {
+  if (!descriptionInput.value) {
+    descWarning.classList.remove('hidden');
+  }
+  if (!minuteInput.value) {
+    minWarning.classList.remove('hidden');
+  }
+  if (!secondInput.value) {
+    secWarning.classList.remove('hidden');
   }
 }
