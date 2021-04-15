@@ -12,6 +12,8 @@ var descWarning = document.getElementById('descWarning');
 var minWarning = document.getElementById('minWarning');
 var secWarning = document.getElementById('secWarning');
 
+var currentActivity;
+
 
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
@@ -24,16 +26,28 @@ secondInput.addEventListener('keydown', preventInvalidEntry);
 function changeStudyButton() {
   studyButton.classList.add('study-active');
   studyIcon.src='./assets/study-active.svg';
+  meditateButton.classList.remove('meditate-active');
+  meditateIcon.src='./assets/meditate.svg';
+  exerciseButton.classList.remove('exercise-active');
+  exerciseIcon.src='./assets/exercise.svg';
 }
 
 function changeMeditateButton() {
   meditateButton.classList.add('meditate-active');
   meditateIcon.src='./assets/meditate-active.svg';
+  exerciseButton.classList.remove('exercise-active');
+  exerciseIcon.src='./assets/exercise.svg';
+  studyButton.classList.remove('study-active');
+  studyIcon.src='./assets/study.svg';
 }
 
 function changeExerciseButton() {
   exerciseButton.classList.add('exercise-active');
   exerciseIcon.src='./assets/exercise-active.svg';
+  meditateButton.classList.remove('meditate-active');
+  meditateIcon.src='./assets/meditate.svg';
+  studyButton.classList.remove('study-active');
+  studyIcon.src='./assets/study.svg';
 }
 
 function preventInvalidEntry(event) {
@@ -46,12 +60,31 @@ function preventInvalidEntry(event) {
 
 function checkInput() {
   if (!descriptionInput.value) {
-    descWarning.classList.remove('hidden');
+    show(descWarning);
   }
   if (!minuteInput.value) {
-    minWarning.classList.remove('hidden');
+    show(minWarning);
   }
   if (!secondInput.value) {
-    secWarning.classList.remove('hidden');
+    show(secWarning);
   }
+  if (descriptionInput.value && minuteInput.value && secondInput.value) {
+    createActivity();
+  }
+}
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
+function createActivity() {
+  hide(descWarning);
+  console.log('hello');
+  var description = descriptionInput.value;
+  var minutes = minuteInput.value;
+  var seconds = secondInput.value;
 }
