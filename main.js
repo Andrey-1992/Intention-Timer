@@ -12,6 +12,8 @@ var descWarning = document.getElementById('descWarning');
 var minWarning = document.getElementById('minWarning');
 var secWarning = document.getElementById('secWarning');
 var btnWarning = document.getElementById('btnWarning');
+var mainView = document.getElementById('mainView');
+var timerView = document.getElementById('timerView');
 
 var currentActivity;
 var pastActivities = [];
@@ -72,8 +74,13 @@ function checkInput() {
   if (!studyIcon.value || !meditateIcon.value || !exerciseIcon.value) {
     show(btnWarning);
   }
-  if (descriptionInput.value && minuteInput.value && secondInput.value) {
+
+  var validate = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
+
+  if (descriptionInput.value && minuteInput.value && secondInput.value && validate) {
     createActivity();
+    show(timerView);
+    hide(mainView);
   }
 }
 
@@ -90,6 +97,6 @@ function createActivity() {
   var description = descriptionInput.value;
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
-  currentActivity = new Activity('study', description, minutes, seconds);
+  currentActivity = new Activity("activity", description, minutes, seconds);
   pastActivities.push(currentActivity);
 }
