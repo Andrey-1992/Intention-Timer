@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Intention-Timer</title>
   </head>
@@ -12,14 +12,14 @@
   <body>
     <main>
       <section class="box1">
-        <h2>New Activity</h2>
-          <section class="user-interaction">
+        <h2 id="activityTitle">New Activity</h2>
+          <section class="user-interaction" id="mainView">
             <div class="category-type">
               <h3>Select a category:</h3>
               <section class="buttons">
-                <button type="input" id="studyButton"><img class="icon" id="studyIcon" src="assets/study.svg"><br>Study</button>
-                <button type="input" id="meditateButton" class="mid-btn"><img class="icon" id="meditateIcon" src="assets/meditate.svg"><br>Meditate</button>
-                <button type="input" id="exerciseButton"><img class="icon" id="exerciseIcon" src="assets/exercise.svg"><br>Exercise</button>
+                <button type="input" id="studyButton" value="study"><img class="icon" id="studyIcon" src="assets/study.svg"><br>Study</button>
+                <button type="input" id="meditateButton" class="mid-btn" value="meditate"><img class="icon" id="meditateIcon" src="assets/meditate.svg"><br>Meditate</button>
+                <button type="input" id="exerciseButton" value="exercise"><img class="icon" id="exerciseIcon" src="assets/exercise.svg"><br>Exercise</button>
               </section>
               <p class="warning hidden" id="btnWarning"><img src="./assets/warning.svg" class="warning-icon">Please select a category.</p>
             </div>
@@ -45,6 +45,11 @@
                 <button class="user-specs-btn" id="startActivityBtn">START ACTIVITY</button>
               </div>
             </section>
+          </section>
+          <section class="timer-view hidden" id="timerView">
+            <h3 class="activity-desc" id="description">Placeholder</h3>
+            <p class="clock"><span id="clockMinutes">00</span>:<span id="clockSeconds">00</span></p>
+            <button type="input" class="start-timer" id="startTimerBtn">START</button>
           </section>
       </section>
       <section class="box2">
