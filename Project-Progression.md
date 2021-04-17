@@ -55,11 +55,11 @@ The checklist below matches the project spec. All pictures can be found in the c
 
 ## Iteration 3 - Build an MVP
 ### 🛑  STOP! Iteration 3 - Build an MVP 🛑 
-- [ ] Wireframe Iteration 3
-- [ ] The user can start the time by clicking Start.
-- [ ] While timer is running, the user should see it count down by second.
-- [ ] When the timer completes, an `alert` should appear in the browser, letting the user know that the time is up and the activity has been completed.
-- [ ] NOTE: This [alert](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) is temporary and is not something we suggest using in a fully built out application.
+- [x] Wireframe Iteration 3
+- [x] The user can start the time by clicking Start.
+- [x] While timer is running, the user should see it count down by second.
+- [x] When the timer completes, an `alert` should appear in the browser, letting the user know that the time is up and the activity has been completed.
+- [x] NOTE: This [alert](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) is temporary and is not something we suggest using in a fully built out application.
 
 ## Iteration 4 - Logging Past Activities
 ### 🛑  STOP! Did you refactor Iteration 3? Clean up your code before moving on! 🛑 
