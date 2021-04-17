@@ -20,8 +20,11 @@ var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 
-var currentActivity;
+var currentActivity = new Activity();
+// var currentActivity;
 var pastActivities = [];
+var totalSeconds;
+var timerId;
 
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
@@ -29,6 +32,9 @@ exerciseButton.addEventListener('click', changeExerciseButton);
 startActivityButton.addEventListener('click', checkInput);
 minuteInput.addEventListener('keydown', preventInvalidEntry);
 secondInput.addEventListener('keydown', preventInvalidEntry);
+startTimerButton.addEventListener('click', function() {
+  currentActivity.startTimer();
+});
 
 
 function changeStudyButton() {
@@ -110,6 +116,7 @@ function createActivity() {
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
+  totalSeconds = (minuteInput.value * 60) + secondInput.value;
   pastActivities.push(currentActivity);
   displayUserInput();
 }
@@ -125,5 +132,21 @@ function displayUserInput() {
     startTimerButton.classList.add('meditate-timer');
   } else {
     startTimerButton.classList.add('exercise-timer');
+  }
+}
+
+function updateCountdown() {
+  var minutes = Math.floor(totalSeconds / 60);
+  var seconds = totalSeconds % 60;
+
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  timerMin.innerHTML = minutes;
+  timerSec.innerHTML = seconds;
+  totalSeconds--;
+
+
+  if (seconds === "00" && minutes === 0) {
+    clearInterval(timerId);
+    alert('Done!');
   }
 }
