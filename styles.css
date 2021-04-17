@@ -389,6 +389,20 @@ main {
   }
 }
 
+.activity-card {
+  background-color: #46424d;
+  border-radius: 5px;
+  box-shadow: 1px 3px 2px #26222D;
+  padding: 6px;
+  text-align: left;
+  color: #fff;
+}
+
+.card-text {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
 .hidden {
   display: none;
 }

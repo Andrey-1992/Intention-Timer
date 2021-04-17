@@ -20,6 +20,7 @@ var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 var logActivityBtn = document.getElementById('logActivityBtn');
+var activityCards = document.getElementById('activityCards');
 
 var currentActivity = new Activity();
 var pastActivities = [];
@@ -118,7 +119,7 @@ function createActivity() {
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
   totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
-  pastActivities.push(currentActivity);
+  // pastActivities.push(currentActivity);
   displayUserInput();
 }
 
@@ -148,6 +149,33 @@ function updateCountdown() {
 
   if (seconds === "00" && minutes === 0) {
     clearInterval(timerId);
-    alert('Done!');
+    // alert('Done!');
+    startTimerBtn.innerText = "NAILED IT!";
+    show(logActivityBtn);
+  }
+}
+
+function addCard() {
+  show(completedView)
+  hide(timerView)
+  pastActivities.push(currentActivity);
+  render();
+  console.log(currentActivity);
+}
+
+function render() {
+  activityCards.innerHTML = '';
+  for (var i = 0; i < pastActivities.length; i++) {
+      activityCards.innerHTML += `
+        <section class="card">
+          <article class="activity-card">
+          <div><span class="card-text">${pastActivities[i].category}</span><br>
+          ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
+          <span style="font-size: 12px;">${pastActivities[i].description}</span>
+          </div>
+
+          </article>
+        </section>
+     `
   }
 }
