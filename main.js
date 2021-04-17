@@ -20,8 +20,10 @@ var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 
-var currentActivity;
+var currentActivity = new Activity();
 var pastActivities = [];
+var totalSeconds;
+var timerId;
 
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
@@ -29,6 +31,9 @@ exerciseButton.addEventListener('click', changeExerciseButton);
 startActivityButton.addEventListener('click', checkInput);
 minuteInput.addEventListener('keydown', preventInvalidEntry);
 secondInput.addEventListener('keydown', preventInvalidEntry);
+startTimerButton.addEventListener('click', function() {
+  currentActivity.startTimer();
+});
 
 
 function changeStudyButton() {
@@ -61,7 +66,6 @@ function changeExerciseButton() {
 function preventInvalidEntry(event) {
   var invalidChars = ['-', '+', 'e'];
   if (invalidChars.includes(event.key)) {
-    console.log(event);
     event.preventDefault();
   }
 }
@@ -80,9 +84,9 @@ function checkInput() {
     show(btnWarning);
   }
 
-  var validate = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
+  var activeButton = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
 
-  if (descriptionInput.value && minuteInput.value && secondInput.value && validate) {
+  if (descriptionInput.value && minuteInput.value && secondInput.value && activeButton) {
     createActivity();
     show(timerView);
     hide(mainView);
@@ -110,6 +114,7 @@ function createActivity() {
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
+  totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
   pastActivities.push(currentActivity);
   displayUserInput();
 }
@@ -118,12 +123,28 @@ function displayUserInput() {
   activityTitle.innerText = 'Current Activity';
   timerDesc.innerText = currentActivity.description;
   timerMin.innerText = currentActivity.minutes;
-  timerSec.innerText = currentActivity.seconds;
+  timerSec.innerText = currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds;
   if (currentActivity.category === 'study') {
     startTimerButton.classList.add('study-timer');
   } else if (currentActivity.category === 'meditate') {
     startTimerButton.classList.add('meditate-timer');
   } else {
     startTimerButton.classList.add('exercise-timer');
+  }
+}
+
+function updateCountdown() {
+  var minutes = Math.floor(totalSeconds / 60);
+  var seconds = totalSeconds % 60;
+
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  timerMin.innerHTML = minutes;
+  timerSec.innerHTML = seconds;
+  totalSeconds--;
+
+
+  if (seconds === "00" && minutes === 0) {
+    clearInterval(timerId);
+    alert('Done!');
   }
 }
