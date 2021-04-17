@@ -21,7 +21,6 @@ var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 
 var currentActivity = new Activity();
-// var currentActivity;
 var pastActivities = [];
 var totalSeconds;
 var timerId;
@@ -67,7 +66,6 @@ function changeExerciseButton() {
 function preventInvalidEntry(event) {
   var invalidChars = ['-', '+', 'e'];
   if (invalidChars.includes(event.key)) {
-    console.log(event);
     event.preventDefault();
   }
 }
@@ -86,9 +84,9 @@ function checkInput() {
     show(btnWarning);
   }
 
-  var validate = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
+  var activeButton = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
 
-  if (descriptionInput.value && minuteInput.value && secondInput.value && validate) {
+  if (descriptionInput.value && minuteInput.value && secondInput.value && activeButton) {
     createActivity();
     show(timerView);
     hide(mainView);
@@ -116,7 +114,7 @@ function createActivity() {
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
-  totalSeconds = (minuteInput.value * 60) + secondInput.value;
+  totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
   pastActivities.push(currentActivity);
   displayUserInput();
 }
@@ -125,7 +123,7 @@ function displayUserInput() {
   activityTitle.innerText = 'Current Activity';
   timerDesc.innerText = currentActivity.description;
   timerMin.innerText = currentActivity.minutes;
-  timerSec.innerText = currentActivity.seconds;
+  timerSec.innerText = currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds;
   if (currentActivity.category === 'study') {
     startTimerButton.classList.add('study-timer');
   } else if (currentActivity.category === 'meditate') {
