@@ -396,11 +396,26 @@ main {
   padding: 6px;
   text-align: left;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-text {
   text-transform: capitalize;
   font-weight: bold;
+}
+
+.cat-time {
+  flex: 2;
+}
+
+.line {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.card-desc {
+
 }
 
 .hidden {

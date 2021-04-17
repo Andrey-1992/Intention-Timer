@@ -169,13 +169,20 @@ function render() {
       activityCards.innerHTML += `
         <section class="card">
           <article class="activity-card">
-          <div><span class="card-text">${pastActivities[i].category}</span><br>
+          <div class="cat-time"><span class="card-text">${pastActivities[i].category}</span><br>
           ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
           <span style="font-size: 12px;">${pastActivities[i].description}</span>
           </div>
-
+          <div class="line">|</div>
           </article>
         </section>
      `
+     // if (currentActivity.category === 'study') {
+     //   startTimerButton.classList.add('study-timer');
+     // } else if (currentActivity.category === 'meditate') {
+     //   startTimerButton.classList.add('meditate-timer');
+     // } else {
+     //   startTimerButton.classList.add('exercise-timer');
+     // }
   }
 }
