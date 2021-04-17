@@ -168,15 +168,9 @@ function render() {
   activityCards.innerHTML = '';
   for (var i = 0; i < pastActivities.length; i++) {
       activityCards.innerHTML += `
-        <section class="card">
-          <article class="activity-card">
-          <div class="cat-time"><span class="card-text">${pastActivities[i].category}</span><br>
+        <span class="card-text">${pastActivities[i].category}</span><br>
           ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
           <span style="font-size: 12px;">${pastActivities[i].description}</span>
-          </div>
-          <div class="line" id="line">|</div>
-          </article>
-        </section>
      `
      // if (pastActivities[i].category === 'study') {
      //   startTimerButton.classList.add('line');
