@@ -13,7 +13,7 @@
     <main>
       <section class="box1">
         <h2 id="activityTitle">New Activity</h2>
-          <section class="user-interaction" id="mainView">
+          <section class="user-interaction hidden" id="mainView">
             <div class="category-type">
               <h3>Select a category:</h3>
               <section class="buttons">
@@ -23,7 +23,7 @@
               </section>
               <p class="warning hidden" id="btnWarning"><img src="./assets/warning.svg" class="warning-icon">Please select a category.</p>
             </div>
-            <section class="user-specs">
+            <section class="user-specs hidden">
               <form class="user-inputs">
                 <h3>What would you like to accomplish during this time?</h3>
                 <input class="accomplish-task" id="descriptionField" type="text">
@@ -46,11 +46,17 @@
               </div>
             </section>
           </section>
-          <section class="timer-view hidden" id="timerView">
+          <section class="timer-view" id="timerView">
             <h3 class="activity-desc" id="description">Placeholder</h3>
             <p class="clock"><span id="clockMinutes">00</span>:<span id="clockSeconds">00</span></p>
             <button type="input" class="start-timer" id="startTimerBtn">START</button><br>
             <button class="user-specs-btn" id="logActivityBtn">LOG ACTIVITY</button>
+          </section>
+          <section class="completed-view hidden" id="completedView">
+            <!-- <h3 class="activity-desc" id="description">Placeholder</h3>
+            <p class="clock"><span id="clockMinutes">00</span>:<span id="clockSeconds">00</span></p>
+            <button type="input" class="start-timer" id="startTimerBtn">START</button><br> -->
+            <button class="create-btn" id="createActivityBtn">CREATE A NEW ACTIVITY</button>
           </section>
       </section>
       <section class="box2">
