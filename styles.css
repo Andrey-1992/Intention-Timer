@@ -414,6 +414,18 @@ main {
   font-size: 24px;
 }
 
+.study-line {
+  color: #b3fd78;
+}
+
+.meditate-line {
+  color: #c278fd;
+}
+
+.exercise-line {
+  color: #fd8078;
+}
+
 .card-desc {
 
 }

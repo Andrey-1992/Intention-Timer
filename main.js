@@ -21,6 +21,7 @@ var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 var logActivityBtn = document.getElementById('logActivityBtn');
 var activityCards = document.getElementById('activityCards');
+var categoryLine = document.getElementById('line');
 
 var currentActivity = new Activity();
 var pastActivities = [];
@@ -173,12 +174,12 @@ function render() {
           ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
           <span style="font-size: 12px;">${pastActivities[i].description}</span>
           </div>
-          <div class="line">|</div>
+          <div class="line" id="line">|</div>
           </article>
         </section>
      `
-     // if (currentActivity.category === 'study') {
-     //   startTimerButton.classList.add('study-timer');
+     // if (pastActivities[i].category === 'study') {
+     //   startTimerButton.classList.add('line');
      // } else if (currentActivity.category === 'meditate') {
      //   startTimerButton.classList.add('meditate-timer');
      // } else {
