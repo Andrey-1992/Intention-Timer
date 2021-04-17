@@ -19,6 +19,7 @@ var timerMin = document.getElementById('clockMinutes');
 var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
+var logActivityBtn = document.getElementById('logActivityBtn');
 
 var currentActivity = new Activity();
 var pastActivities = [];
@@ -33,7 +34,9 @@ minuteInput.addEventListener('keydown', preventInvalidEntry);
 secondInput.addEventListener('keydown', preventInvalidEntry);
 startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
+  startTimerButton.disabled = true;
 });
+logActivityBtn.addEventListener('click', addCard);
 
 
 function changeStudyButton() {
