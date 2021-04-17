@@ -21,6 +21,9 @@ var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 var logActivityBtn = document.getElementById('logActivityBtn');
 var activityCards = document.getElementById('activityCards');
+var noCards = document.getElementById('noCards');
+var showCards = document.getElementById('showCards');
+var cardContent = document.getElementById('cardContent');
 var categoryLine = document.getElementById('line');
 
 var currentActivity = new Activity();
@@ -159,15 +162,17 @@ function updateCountdown() {
 function addCard() {
   show(completedView)
   hide(timerView)
+  hide(noCards)
+  show(showCards)
   pastActivities.push(currentActivity);
   render();
   console.log(currentActivity);
 }
 
 function render() {
-  activityCards.innerHTML = '';
+  cardContent.innerHTML = '';
   for (var i = 0; i < pastActivities.length; i++) {
-      activityCards.innerHTML += `
+      cardContent.innerHTML += `
         <span class="card-text">${pastActivities[i].category}</span><br>
           ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
           <span style="font-size: 12px;">${pastActivities[i].description}</span>
