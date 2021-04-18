@@ -19,6 +19,13 @@ var timerMin = document.getElementById('clockMinutes');
 var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
+var logActivityBtn = document.getElementById('logActivityBtn');
+var activityCards = document.getElementById('activityCards'); //may be able to delete this one
+var noCards = document.getElementById('noCards');
+var showCards = document.getElementById('showCards');
+var cardContent = document.getElementById('cardContent');
+var categoryLine = document.getElementById('line');
+var newActivityButton = document.getElementById('createActivityBtn');
 
 var currentActivity = new Activity();
 var pastActivities = [];
@@ -33,7 +40,10 @@ minuteInput.addEventListener('keydown', preventInvalidEntry);
 secondInput.addEventListener('keydown', preventInvalidEntry);
 startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
+  startTimerButton.disabled = true;
 });
+logActivityBtn.addEventListener('click', addCard);
+newActivityButton.addEventListener('click',newActivityView);
 
 
 function changeStudyButton() {
@@ -115,7 +125,6 @@ function createActivity() {
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
   totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
-  pastActivities.push(currentActivity);
   displayUserInput();
 }
 
@@ -145,6 +154,50 @@ function updateCountdown() {
 
   if (seconds === "00" && minutes === 0) {
     clearInterval(timerId);
-    alert('Done!');
+    startTimerBtn.innerText = "NAILED IT!";
+    show(logActivityBtn);
   }
+}
+
+function addCard() {
+  show(completedView)
+  hide(timerView)
+  hide(noCards)
+  show(showCards)
+  pastActivities.push(currentActivity);
+  displayCard();
+}
+
+function displayCard() {
+  cardContent.innerHTML = '';
+  for (var i = 0; i < pastActivities.length; i++) {
+      cardContent.innerHTML += `
+        <span class="card-text">${pastActivities[i].category}</span><br>
+          ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
+          <span style="font-size: 12px;">${pastActivities[i].description}</span>
+     `
+     if (pastActivities[i].category === 'study') {
+       categoryLine.classList.add('study-line');
+     } else if (pastActivities[i].category === 'meditate') {
+       categoryLine.classList.add('meditate-line');
+     } else {
+       categoryLine.classList.add('exercise-line');
+     }
+  }
+}
+
+function newActivityView() {
+  show(mainView);
+  hide(completedView);
+  clearForm();
+}
+
+function clearForm() {
+  // descriptionInput.value = '';
+  // minuteInput.value = '';
+  // secondInput.value = '';
+  // studyIcon.value = '';
+  // meditateIcon.value = '';
+  // exerciseIcon.value = '';
+  window.location.reload();
 }
