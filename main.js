@@ -164,7 +164,7 @@ function addCard() {
   hide(timerView)
   hide(noCards)
   show(showCards)
-  pastActivities.push(currentActivity);
+  currentActivity.saveToStorage();
   displayCard();
 }
 

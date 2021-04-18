@@ -14,5 +14,12 @@ class Activity {
   markComplete() {
     this.completed = true;
   }
-  saveToStorage() {}
+  saveToStorage() {
+    if (!localStorage.getItem('data')) {
+    localStorage.setItem('data', '[]');
+    }
+    var localStorageData = JSON.parse(localStorage.getItem('data'))
+    localStorageData.push(currentActivity);
+    localStorage.setItem('data', JSON.stringify(localStorageData));
+  }
 }
