@@ -25,6 +25,7 @@ var noCards = document.getElementById('noCards');
 var showCards = document.getElementById('showCards');
 var cardContent = document.getElementById('cardContent');
 var categoryLine = document.getElementById('line');
+var newActivityButton = document.getElementById('createActivityBtn');
 
 var currentActivity = new Activity();
 var pastActivities = [];
@@ -42,6 +43,7 @@ startTimerButton.addEventListener('click', function() {
   startTimerButton.disabled = true;
 });
 logActivityBtn.addEventListener('click', addCard);
+newActivityButton.addEventListener('click',newActivityView);
 
 
 function changeStudyButton() {
@@ -123,7 +125,6 @@ function createActivity() {
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
   totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
-  // pastActivities.push(currentActivity);
   displayUserInput();
 }
 
@@ -153,7 +154,6 @@ function updateCountdown() {
 
   if (seconds === "00" && minutes === 0) {
     clearInterval(timerId);
-    // alert('Done!');
     startTimerBtn.innerText = "NAILED IT!";
     show(logActivityBtn);
   }
@@ -165,10 +165,10 @@ function addCard() {
   hide(noCards)
   show(showCards)
   pastActivities.push(currentActivity);
-  render();
+  displayCard();
 }
 
-function render() {
+function displayCard() {
   cardContent.innerHTML = '';
   for (var i = 0; i < pastActivities.length; i++) {
       cardContent.innerHTML += `
@@ -184,4 +184,9 @@ function render() {
        categoryLine.classList.add('exercise-line');
      }
   }
+}
+
+function newActivityView() {
+  show(mainView);
+  hide(completedView);
 }
