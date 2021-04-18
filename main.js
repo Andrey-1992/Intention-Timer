@@ -197,13 +197,13 @@ function newActivityView() {
 }
 
 function clearForm() {
-  // descriptionInput.value = '';
-  // minuteInput.value = '';
-  // secondInput.value = '';
-  // studyIcon.value = '';
-  // meditateIcon.value = '';
-  // exerciseIcon.value = '';
-  window.location.reload();
+  descriptionInput.value = '';
+  minuteInput.value = '';
+  secondInput.value = '';
+  studyIcon.value = '';
+  meditateIcon.value = '';
+  exerciseIcon.value = '';
+  // window.location.reload();
   displayCard();
   show(showCards);
   hide(noCards);
