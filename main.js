@@ -20,7 +20,7 @@ var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 var logActivityBtn = document.getElementById('logActivityBtn');
-var activityCards = document.getElementById('activityCards');
+var activityCards = document.getElementById('activityCards'); //may be able to delete this one
 var noCards = document.getElementById('noCards');
 var showCards = document.getElementById('showCards');
 var cardContent = document.getElementById('cardContent');
@@ -177,12 +177,12 @@ function render() {
           ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
           <span style="font-size: 12px;">${pastActivities[i].description}</span>
      `
-     // if (pastActivities[i].category === 'study') {
-     //   startTimerButton.classList.add('line');
-     // } else if (currentActivity.category === 'meditate') {
-     //   startTimerButton.classList.add('meditate-timer');
-     // } else {
-     //   startTimerButton.classList.add('exercise-timer');
-     // }
+     if (pastActivities[i].category === 'study') {
+       categoryLine.classList.add('study-line');
+     } else if (pastActivities[i].category === 'meditate') {
+       categoryLine.classList.add('meditate-line');
+     } else {
+       categoryLine.classList.add('exercise-line');
+     }
   }
 }
