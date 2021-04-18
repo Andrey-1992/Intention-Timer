@@ -175,7 +175,7 @@ function displayCard() {
     for (var i = 0; i < parseActivities.length; i++) {
       showCards.innerHTML += `
       <div class="cat-time" id="cardContent">
-      <span class="card-text">${parseActivities[i].category}</span><br>
+      <span class="card-text">${parseActivities[i].category}</span>
       ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
       <span style="font-size: 12px;">${parseActivities[i].description}</span>
       <div class="line ${parseActivities[i].category}-line" id="line">|</div>

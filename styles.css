@@ -422,6 +422,8 @@ main {
 }
 
 .cat-time {
+  display: flex;
+  flex-wrap: wrap;
   flex: 10;
   background-color: #46424d;
   border-radius: 5px;
@@ -437,6 +439,7 @@ main {
   font-size: 24px;
   justify-content: flex-end;
   margin: 0;
+  flex: 1;
 }
 
 .study-line {
