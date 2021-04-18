@@ -166,7 +166,6 @@ function addCard() {
   show(showCards)
   pastActivities.push(currentActivity);
   render();
-  console.log(currentActivity);
 }
 
 function render() {
