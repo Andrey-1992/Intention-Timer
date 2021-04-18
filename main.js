@@ -166,6 +166,7 @@ function addCard() {
   show(showCards)
   currentActivity.saveToStorage();
   displayCard();
+  activityTitle.innerText = 'Completed Activity';
 }
 
 
@@ -203,6 +204,9 @@ function clearForm() {
   // meditateIcon.value = '';
   // exerciseIcon.value = '';
   window.location.reload();
+  displayCard();
+  show(showCards);
+  hide(noCards);
 }
 
 
