@@ -189,4 +189,15 @@ function displayCard() {
 function newActivityView() {
   show(mainView);
   hide(completedView);
+  clearForm();
+}
+
+function clearForm() {
+  // descriptionInput.value = '';
+  // minuteInput.value = '';
+  // secondInput.value = '';
+  // studyIcon.value = '';
+  // meditateIcon.value = '';
+  // exerciseIcon.value = '';
+  window.location.reload();
 }
