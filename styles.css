@@ -412,14 +412,8 @@ main {
 }
 
 .activity-card {
-  background-color: #46424d;
-  border-radius: 5px;
-  box-shadow: 3px 3px 2px 1px #26222d;
-  padding: 6px;
-  text-align: left;
-  color: #fff;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .card-text {
@@ -428,12 +422,21 @@ main {
 }
 
 .cat-time {
-  flex: 2;
+  flex: 10;
+  background-color: #46424d;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 1px #26222d;
+  padding: 6px;
+  text-align: left;
+  color: #fff;
+  margin: 0px 0px 20px 0px;
 }
 
 .line {
   font-weight: bold;
   font-size: 24px;
+  justify-content: flex-end;
+  margin: 0;
 }
 
 .study-line {

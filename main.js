@@ -168,23 +168,22 @@ function addCard() {
   displayCard();
 }
 
+
 function displayCard() {
-  cardContent.innerHTML = '';
-  for (var i = 0; i < pastActivities.length; i++) {
-      cardContent.innerHTML += `
-        <span class="card-text">${pastActivities[i].category}</span><br>
-          ${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS<br>
-          <span style="font-size: 12px;">${pastActivities[i].description}</span>
-     `
-     if (pastActivities[i].category === 'study') {
-       categoryLine.classList.add('study-line');
-     } else if (pastActivities[i].category === 'meditate') {
-       categoryLine.classList.add('meditate-line');
-     } else {
-       categoryLine.classList.add('exercise-line');
-     }
-  }
+  showCards.innerHTML = '';
+    var parseActivities = JSON.parse(localStorage.getItem('data'))
+    for (var i = 0; i < parseActivities.length; i++) {
+      showCards.innerHTML += `
+      <div class="cat-time" id="cardContent">
+      <span class="card-text">${parseActivities[i].category}</span><br>
+      ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
+      <span style="font-size: 12px;">${parseActivities[i].description}</span>
+      <div class="line ${parseActivities[i].category}-line" id="line">|</div>
+      </div>
+      `
+    }
 }
+
 
 function newActivityView() {
   show(mainView);
@@ -201,3 +200,13 @@ function clearForm() {
   // exerciseIcon.value = '';
   window.location.reload();
 }
+
+
+
+
+
+
+
+// <div class="card-text">${parseActivities[i].category}</div><br>
+//   ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
+//   <div style="font-size: 12px;">${parseActivities[i].description}</div>
