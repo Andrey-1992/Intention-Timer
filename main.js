@@ -14,6 +14,7 @@ var secWarning = document.getElementById('secWarning');
 var btnWarning = document.getElementById('btnWarning');
 var mainView = document.getElementById('mainView');
 var timerView = document.getElementById('timerView');
+var completedView = document.getElementById('completedView');
 var timerDesc = document.getElementById('description');
 var timerMin = document.getElementById('clockMinutes');
 var timerSec = document.getElementById('clockSeconds');
@@ -22,6 +23,7 @@ var activityTitle = document.getElementById('activityTitle');
 var logActivityBtn = document.getElementById('logActivityBtn');
 var cardContent = document.getElementById('cardContent');
 var categoryLine = document.getElementById('line');
+var activityCards = document.getElementById('activityCards');
 var newActivityButton = document.getElementById('createActivityBtn');
 
 var currentActivity = new Activity();

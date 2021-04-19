@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-    <title>Intention-Timer</title>
+    <title>Intention Timer</title>
   </head>
   <header>
     <h1>Intention Timer</h1>
   </header>
   <body>
     <main>
-      <section class="box1" id="inputs">
+      <!-- maybe delete inputs ID -->
+      <section class="main-view" id="inputs">
         <h2 id="activityTitle">New Activity</h2>
           <section class="user-interaction" id="mainView">
             <div class="category-type">
-              <h3>Select a category:</h3>
+              <h3 label="Select a Category">Select a category:</h3>
               <section class="buttons">
-                <button type="input" id="studyButton" value="study"><img class="icon" id="studyIcon" src="assets/study.svg"><br>Study</button>
-                <button type="input" id="meditateButton" class="mid-btn" value="meditate"><img class="icon" id="meditateIcon" src="assets/meditate.svg"><br>Meditate</button>
-                <button type="input" id="exerciseButton" value="exercise"><img class="icon" id="exerciseIcon" src="assets/exercise.svg"><br>Exercise</button>
+                <button type="input" id="studyButton" value="study"><img class="icon" id="studyIcon" src="assets/study.svg" alt="Study Icon"><br>Study</button>
+                <button type="input" id="meditateButton" class="mid-btn" value="meditate"><img class="icon" id="meditateIcon" src="assets/meditate.svg" alt="Meditate Icon"><br>Meditate</button>
+                <button type="input" id="exerciseButton" value="exercise"><img class="icon" id="exerciseIcon" src="assets/exercise.svg" alt="Exercise Icon"><br>Exercise</button>
               </section>
-              <p class="warning hidden" id="btnWarning"><img src="./assets/warning.svg" class="warning-icon">Please select a category.</p>
+              <p class="warning hidden" id="btnWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">Please select a category.</p>
             </div>
             <section class="user-specs">
               <form class="user-inputs">
-                <h3>What would you like to accomplish during this time?</h3>
+                <label for="descriptionField"><h3>What would you like to accomplish during this time?</h3></label>
                 <input class="accomplish-task" id="descriptionField" type="text">
-                <p class="warning hidden" id="descWarning"><img src="./assets/warning.svg" class="warning-icon">A description is required.</p>
+                <p class="warning hidden" id="descWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A description is required.</p>
                 <div class="times">
                   <section class="min">
-                    <h3>Minutes</h3>
+                    <label for="minuteField"><h3>Minutes</h3></label>
                     <input class="min-input" id="minuteField" type="number">
-                    <p class="warning hidden" id="minWarning"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
+                    <p class="warning hidden" id="minWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A number is required.</p>
                   </section>
                   <section class="sec">
-                    <h3>Seconds</h3>
+                    <label for="secondField"><h3>Seconds</h3></label>
                     <input class="sec-input" id="secondField" type="number">
-                    <p class="warning hidden" id="secWarning"><img src="./assets/warning.svg" class="warning-icon">A number is required.</p>
+                    <p class="warning hidden" id="secWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A number is required.</p>
                   </section>
                 </div>
               </form>
@@ -46,17 +47,17 @@
               </div>
             </section>
           </section>
-          <section class="timer-view hidden" id="timerView">
+          <section class="user-interaction center hidden" id="timerView">
             <h3 class="activity-desc" id="description"></h3>
             <p class="clock"><span id="clockMinutes"></span>:<span id="clockSeconds"></span></p>
             <button type="input" class="start-timer" id="startTimerBtn">START</button><br>
             <button class="user-specs-btn hidden" id="logActivityBtn">LOG ACTIVITY</button>
           </section>
-          <section class="completed-view hidden" id="completedView">
+          <section class="user-interaction center hidden" id="completedView">
             <button class="create-btn" id="createActivityBtn">CREATE A NEW ACTIVITY</button>
           </section>
       </section>
-      <section class="box2">
+      <aside>
         <h2>Past Activities</h2>
         <div class="past-act-msg">
           <article class="card-section" id="activityCards">
@@ -64,7 +65,7 @@
             <p>Complete the form to the left to get started!</p>
           </article>
         </div>
-      </section>
+    </aside>
     </main>
   </body>
 <script src="./activity.js"></script>
