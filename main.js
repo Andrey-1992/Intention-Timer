@@ -193,6 +193,8 @@ function displayCard() {
 function newActivityView() {
   show(mainView);
   hide(completedView);
+  show(showCards);
+  hide(noCards);
   clearForm();
 }
 
@@ -200,16 +202,26 @@ function clearForm() {
   descriptionInput.value = '';
   minuteInput.value = '';
   secondInput.value = '';
-  studyIcon.value = '';
-  meditateIcon.value = '';
-  exerciseIcon.value = '';
+  studyButton.classList.remove('study-active');
+  studyIcon.src='./assets/study.svg';
+  exerciseButton.classList.remove('exercise-active');
+  exerciseIcon.src='./assets/exercise.svg';
+  meditateButton.classList.remove('meditate-active');
+  meditateIcon.src='./assets/meditate.svg';
+  hideWarnings();
+  // studyIcon.value = '';
+  // meditateIcon.value = '';
+  // exerciseIcon.value = '';
   // window.location.reload();
   displayCard();
-  show(showCards);
-  hide(noCards);
 }
 
-
+function hideWarnings() {
+  hide(btnWarning);
+  hide(descWarning);
+  hide(minWarning);
+  hide(secWarning);
+}
 
 
 
