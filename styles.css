@@ -459,9 +459,9 @@ main {
   justify-content: space-between;
 }
 
-/* .card-desc {
-
-} */
+.card-desc {
+  font-size: 12px;
+}
 
 .hidden {
   display: none;
