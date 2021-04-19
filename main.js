@@ -190,7 +190,7 @@ function displayCard() {
       </div>
       <div class="line ${parseActivities[i].category}-line" id="line">|</div>
       </div>
-      <span style="font-size: 12px;">${parseActivities[i].description}</span>
+      <span class="card-desc">${parseActivities[i].description}</span>
       </div>
       `
     }
