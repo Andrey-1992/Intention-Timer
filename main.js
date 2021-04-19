@@ -25,10 +25,10 @@ var categoryLine = document.getElementById('line');
 var newActivityButton = document.getElementById('createActivityBtn');
 
 var currentActivity = new Activity();
-var pastActivities = [];
 var totalSeconds;
 var timerId;
 
+window.addEventListener('DOMContentLoaded', displayCard);
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
 exerciseButton.addEventListener('click', changeExerciseButton);
@@ -173,7 +173,8 @@ function addCard() {
 
 
 function displayCard() {
-  activityCards.innerHTML = '';
+  if (localStorage.getItem('data')) {
+    activityCards.innerHTML = '';
     var parseActivities = JSON.parse(localStorage.getItem('data'))
     for (var i = 0; i < parseActivities.length; i++) {
       activityCards.innerHTML += `
@@ -189,6 +190,7 @@ function displayCard() {
       </div>
       `
     }
+  }
 }
 
 
