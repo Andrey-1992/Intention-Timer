@@ -20,18 +20,15 @@ var timerSec = document.getElementById('clockSeconds');
 var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
 var logActivityBtn = document.getElementById('logActivityBtn');
-var activityCards = document.getElementById('activityCards'); //may be able to delete this one
-var noCards = document.getElementById('noCards');
-var showCards = document.getElementById('showCards');
 var cardContent = document.getElementById('cardContent');
 var categoryLine = document.getElementById('line');
 var newActivityButton = document.getElementById('createActivityBtn');
 
 var currentActivity = new Activity();
-var pastActivities = [];
 var totalSeconds;
 var timerId;
 
+window.addEventListener('DOMContentLoaded', displayCard);
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
 exerciseButton.addEventListener('click', changeExerciseButton);
@@ -169,8 +166,6 @@ function updateCountdown() {
 function addCard() {
   show(completedView)
   hide(timerView)
-  hide(noCards)
-  show(showCards)
   currentActivity.saveToStorage();
   displayCard();
   activityTitle.innerText = 'Completed Activity';
@@ -178,10 +173,11 @@ function addCard() {
 
 
 function displayCard() {
-  showCards.innerHTML = '';
+  if (localStorage.getItem('data')) {
+    activityCards.innerHTML = '';
     var parseActivities = JSON.parse(localStorage.getItem('data'))
     for (var i = 0; i < parseActivities.length; i++) {
-      showCards.innerHTML += `
+      activityCards.innerHTML += `
       <div class="cat-time" id="cardContent">
       <div class="card-top">
       <div>
@@ -194,6 +190,7 @@ function displayCard() {
       </div>
       `
     }
+  }
 }
 
 
@@ -201,8 +198,6 @@ function newActivityView() {
   activityTitle.innerText = 'New Activity';
   show(mainView);
   hide(completedView);
-  show(showCards);
-  hide(noCards);
   clearForm();
 }
 
@@ -217,10 +212,6 @@ function clearForm() {
   meditateButton.classList.remove('meditate-active');
   meditateIcon.src='./assets/meditate.svg';
   hideWarnings();
-  // studyIcon.value = '';
-  // meditateIcon.value = '';
-  // exerciseIcon.value = '';
-  // window.location.reload();
   displayCard();
 }
 
@@ -230,11 +221,3 @@ function hideWarnings() {
   hide(minWarning);
   hide(secWarning);
 }
-
-
-
-
-
-// <div class="card-text">${parseActivities[i].category}</div><br>
-//   ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
-//   <div style="font-size: 12px;">${parseActivities[i].description}</div>

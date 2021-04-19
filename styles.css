@@ -412,7 +412,7 @@ main {
   }
 }
 
-.activity-card {
+.card-section {
   display: flex;
   flex-direction: column;
 }
