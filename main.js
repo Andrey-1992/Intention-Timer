@@ -98,9 +98,16 @@ function checkInput() {
 
   if (descriptionInput.value && minuteInput.value && secondInput.value && activeButton) {
     createActivity();
+    resetTimerBtn();
     show(timerView);
     hide(mainView);
   }
+}
+
+function resetTimerBtn() {
+  startTimerButton.innerText = 'START';
+  startTimerButton.disabled = false;
+  hide(logActivityBtn);
 }
 
 function show(element) {
@@ -191,6 +198,7 @@ function displayCard() {
 
 
 function newActivityView() {
+  activityTitle.innerText = 'New Activity';
   show(mainView);
   hide(completedView);
   show(showCards);
