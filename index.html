@@ -11,8 +11,7 @@
   </header>
   <body>
     <main>
-      <!-- maybe delete inputs ID -->
-      <section class="main-view" id="inputs">
+      <section class="main-view">
         <h2 id="activityTitle">New Activity</h2>
           <section class="user-interaction" id="mainView">
             <div class="category-type">
@@ -22,23 +21,23 @@
                 <button type="input" id="meditateButton" class="mid-btn" value="meditate"><img class="icon" id="meditateIcon" src="assets/meditate.svg" alt="Meditate Icon"><br>Meditate</button>
                 <button type="input" id="exerciseButton" value="exercise"><img class="icon" id="exerciseIcon" src="assets/exercise.svg" alt="Exercise Icon"><br>Exercise</button>
               </section>
-              <p class="warning hidden" id="btnWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">Please select a category.</p>
+              <p class="warning-message hidden" id="btnWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">Please select a category.</p>
             </div>
             <section class="user-specs">
               <form class="user-inputs">
                 <label for="descriptionField"><h3>What would you like to accomplish during this time?</h3></label>
                 <input class="accomplish-task" id="descriptionField" type="text">
-                <p class="warning hidden" id="descWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A description is required.</p>
+                <p class="warning-message hidden" id="descWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A description is required.</p>
                 <div class="times">
                   <section class="min">
                     <label for="minuteField"><h3>Minutes</h3></label>
                     <input class="min-input" id="minuteField" type="number">
-                    <p class="warning hidden" id="minWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A number is required.</p>
+                    <p class="warning-message hidden" id="minWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A number is required.</p>
                   </section>
                   <section class="sec">
                     <label for="secondField"><h3>Seconds</h3></label>
                     <input class="sec-input" id="secondField" type="number">
-                    <p class="warning hidden" id="secWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A number is required.</p>
+                    <p class="warning-message hidden" id="secWarning"><img src="./assets/warning.svg" alt="warning icon" class="warning-icon">A number is required.</p>
                   </section>
                 </div>
               </form>
@@ -54,17 +53,15 @@
             <button class="user-specs-btn hidden" id="logActivityBtn">LOG ACTIVITY</button>
           </section>
           <section class="user-interaction center hidden" id="completedView">
-            <button class="create-btn" id="createActivityBtn">CREATE A NEW ACTIVITY</button>
+            <button class="user-specs-btn create" id="createActivityBtn">CREATE A NEW ACTIVITY</button>
           </section>
       </section>
       <aside>
         <h2>Past Activities</h2>
-        <div class="past-act-msg">
           <article class="card-section" id="activityCards">
             <p>You haven't logged any activities yet.</p>
             <p>Complete the form to the left to get started!</p>
           </article>
-        </div>
     </aside>
     </main>
   </body>

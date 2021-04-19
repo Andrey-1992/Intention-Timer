@@ -111,10 +111,6 @@ input {
  border-color: #fd8078;
 }
 
-.past-act-msg {
-  text-align: center;
-}
-
 aside {
   flex: 1;
   border-left: 2px solid #46424d;
@@ -153,15 +149,8 @@ button {
   margin-right: 0px;
 }
 
-.create-btn {
-  background-color: #fff;
-  color: #2B2733;
-  white-space: nowrap;
-  font-size: 1.125rem;
-  height: 40px;
+.create {
   width: 330px;
-  margin-top: 60px;
-  margin-right: 0px;
 }
 
 .start-button {
@@ -189,7 +178,7 @@ button {
   margin-right: 0.5em;
 }
 
-.warning {
+.warning-message {
   margin-top: 15px;
   color: #efb7ec;
 }
@@ -214,6 +203,55 @@ main {
   color: #CBC9CF;
   display: flex;
   font-weight: 300;
+}
+
+/* ACTIVITY CARDS */
+.card-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-text {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.cat-time {
+  background-color: #46424d;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 1px #26222d;
+  padding: 6px;
+  text-align: left;
+  color: #fff;
+  margin: 0px 0px 20px 0px;
+}
+
+.line {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.study-line {
+  color: #b3fd78;
+}
+
+.meditate-line {
+  color: #c278fd;
+}
+
+.exercise-line {
+  color: #fd8078;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-desc {
+  font-size: 0.75rem;
 }
 
 /* MEDIA QUERIES */
@@ -271,7 +309,7 @@ main {
     flex-wrap: wrap;
   }
 
-  .box1 {
+  .main-view {
     display: flex;
     flex-wrap: wrap;
   }
@@ -314,7 +352,7 @@ main {
     flex-wrap: wrap;
   }
 
-  .box1 {
+  .main-view {
     display: flex;
     flex-wrap: wrap;
   }
@@ -339,7 +377,7 @@ main {
     flex-wrap: wrap;
   }
 
-  .box1 {
+  .main-view {
     display: flex;
     flex-wrap: wrap;
   }
@@ -354,58 +392,6 @@ main {
     flex-wrap: wrap;
     flex-direction: column;
   }
-}
-
-.card-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-text {
-  text-transform: capitalize;
-  font-weight: bold;
-}
-
-.cat-time {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* flex: 10; */
-  background-color: #46424d;
-  border-radius: 5px;
-  box-shadow: 3px 3px 2px 1px #26222d;
-  padding: 6px;
-  text-align: left;
-  color: #fff;
-  margin: 0px 0px 20px 0px;
-}
-
-.line {
-  font-weight: bold;
-  font-size: 1.5rem;
-  /* justify-content: flex-end; */
-  margin: 0;
-  /* flex: 1; */
-}
-
-.study-line {
-  color: #b3fd78;
-}
-
-.meditate-line {
-  color: #c278fd;
-}
-
-.exercise-line {
-  color: #fd8078;
-}
-
-.card-top {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-desc {
-  font-size: 0.75rem;
 }
 
 .hidden {
