@@ -1,3 +1,4 @@
+/* FULL PAGE FONT */
 * {
   font-family: 'Montserrat', sans-serif;
 }
@@ -22,7 +23,7 @@ h2 {
 h3 {
   color: #FFF;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 header {
@@ -34,7 +35,7 @@ header {
 
 p {
   color: #cbc9cf;
-  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 5px;
   margin-top: 5px;
 }
@@ -123,12 +124,12 @@ body {
 }
 
 .activity-desc {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 25px 0px 0px 0px;
 }
 
 .clock {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 900;
   color: #FFF;
   margin-bottom: 40px;
@@ -140,7 +141,7 @@ input {
   color: #CBC9CF;
   background-color: transparent;
   width: 100%;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .input-warning {
@@ -193,7 +194,7 @@ button {
   border: 2px solid #fff;
   border-radius: 4px;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
 }
 
@@ -201,7 +202,7 @@ button {
   background-color: #fff;
   color: #2B2733;
   white-space: nowrap;
-  font-size: 18px;
+  font-size: 1.125rem;
   height: 40px;
   width: 220px;
   margin-top: 60px;
@@ -212,7 +213,7 @@ button {
   background-color: #fff;
   color: #2B2733;
   white-space: nowrap;
-  font-size: 18px;
+  font-size: 1.125rem;
   height: 40px;
   width: 330px;
   margin-top: 60px;
@@ -229,7 +230,7 @@ button {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 
@@ -436,7 +437,7 @@ main {
 
 .line {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.5rem;
   /* justify-content: flex-end; */
   margin: 0;
   /* flex: 1; */
@@ -459,9 +460,9 @@ main {
   justify-content: space-between;
 }
 
-/* .card-desc {
-
-} */
+.card-desc {
+  font-size: 0.75rem;
+}
 
 .hidden {
   display: none;
