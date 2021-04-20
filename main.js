@@ -40,7 +40,7 @@ startTimerButton.addEventListener('click', function() {
   startTimerButton.disabled = true;
 });
 logActivityBtn.addEventListener('click', addCard);
-newActivityButton.addEventListener('click',newActivityView);
+newActivityButton.addEventListener('click', viewNewForm);
 
 
 function changeStudyButton() {
@@ -78,6 +78,8 @@ function preventInvalidEntry(event) {
 }
 
 function checkInput() {
+  var activeButton = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
+
   if (!descriptionInput.value) {
     show(descWarning);
   }
@@ -87,11 +89,9 @@ function checkInput() {
   if (!secondInput.value) {
     show(secWarning);
   }
-  if (!studyIcon.value || !meditateIcon.value || !exerciseIcon.value) {
+  if (!activeButton) {
     show(btnWarning);
   }
-
-  var activeButton = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
 
   if (descriptionInput.value && minuteInput.value && secondInput.value && activeButton) {
     createActivity();
@@ -156,7 +156,7 @@ function updateCountdown() {
   currentActivity.totalSeconds--;
 
 
-  if (seconds === "00" && minutes === 0) {
+  if (seconds === "00" && !minutes) {
     clearInterval(currentActivity.timerId);
     startTimerBtn.innerText = "NAILED IT!";
     show(logActivityBtn);
@@ -194,7 +194,7 @@ function displayCard() {
 }
 
 
-function newActivityView() {
+function viewNewForm() {
   activityTitle.innerText = 'New Activity';
   show(mainView);
   hide(completedView);
