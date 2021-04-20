@@ -2,6 +2,9 @@ var studyButton = document.getElementById('studyButton');
 var meditateButton = document.getElementById('meditateButton');
 var exerciseButton = document.getElementById('exerciseButton');
 var startActivityButton = document.getElementById('startActivityBtn');
+var logActivityBtn = document.getElementById('logActivityBtn');
+var startTimerButton = document.getElementById('startTimerBtn');
+var newActivityButton = document.getElementById('createActivityBtn');
 var studyIcon = document.getElementById('studyIcon');
 var meditateIcon = document.getElementById('meditateIcon');
 var exerciseIcon = document.getElementById('exerciseIcon');
@@ -18,16 +21,13 @@ var completedView = document.getElementById('completedView');
 var timerDesc = document.getElementById('description');
 var timerMin = document.getElementById('clockMinutes');
 var timerSec = document.getElementById('clockSeconds');
-var startTimerButton = document.getElementById('startTimerBtn');
 var activityTitle = document.getElementById('activityTitle');
-var logActivityBtn = document.getElementById('logActivityBtn');
 var cardContent = document.getElementById('cardContent');
 var categoryLine = document.getElementById('line');
 var activityCards = document.getElementById('activityCards');
-var newActivityButton = document.getElementById('createActivityBtn');
 
 var currentActivity = new Activity();
-var totalSeconds;
+// var totalSeconds;
 var timerId;
 
 window.addEventListener('DOMContentLoaded', displayCard);
@@ -130,7 +130,8 @@ function createActivity() {
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
-  totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
+  // totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
+  currentActivity.totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
   displayUserInput();
 }
 
@@ -149,13 +150,16 @@ function displayUserInput() {
 }
 
 function updateCountdown() {
-  var minutes = Math.floor(totalSeconds / 60);
-  var seconds = totalSeconds % 60;
+  // var minutes = Math.floor(totalSeconds / 60);
+  var minutes = Math.floor(currentActivity.totalSeconds / 60);
+  // var seconds = totalSeconds % 60;
+  var seconds = currentActivity.totalSeconds % 60;
 
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timerMin.innerHTML = minutes;
   timerSec.innerHTML = seconds;
-  totalSeconds--;
+  // totalSeconds--;
+  currentActivity.totalSeconds--;
 
 
   if (seconds === "00" && minutes === 0) {
