@@ -61,7 +61,7 @@ body {
 
 .center {
   text-align: center;
-  height: 60vh;
+  height: 65vh;
 }
 
 .min, .sec {
@@ -216,7 +216,7 @@ main {
   font-weight: bold;
 }
 
-.cat-time {
+.card-content {
   background-color: #46424d;
   border-radius: 5px;
   box-shadow: 3px 3px 2px 1px #26222d;
@@ -227,21 +227,21 @@ main {
 }
 
 .line {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin: 0;
+  margin: 5px;
+  border-radius: 5px;
+  width: 4px;
 }
 
 .study-line {
-  color: #b3fd78;
+  background-color: #b3fd78;
 }
 
 .meditate-line {
-  color: #c278fd;
+  background-color: #c278fd;
 }
 
 .exercise-line {
-  color: #fd8078;
+  background-color: #fd8078;
 }
 
 .card-top {
