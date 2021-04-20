@@ -42,33 +42,34 @@ startTimerButton.addEventListener('click', function() {
 logActivityBtn.addEventListener('click', addCard);
 newActivityButton.addEventListener('click', viewNewForm);
 
+function selectButton(target, className, icon, imgSrc) {
+  target.classList.add(className);
+  icon.src=imgSrc;
+}
+
+function deselectButton(target, className, icon, imgSrc) {
+  target.classList.remove(className);
+  icon.src=imgSrc;
+}
 
 function changeStudyButton() {
-  studyButton.classList.add('study-active');
-  studyIcon.src='./assets/study-active.svg';
-  meditateButton.classList.remove('meditate-active');
-  meditateIcon.src='./assets/meditate.svg';
-  exerciseButton.classList.remove('exercise-active');
-  exerciseIcon.src='./assets/exercise.svg';
+  selectButton(studyButton, 'study-active', studyIcon, './assets/study-active.svg');
+  deselectButton(meditateButton, 'meditate-active', meditateIcon, './assets/meditate.svg');
+  deselectButton(exerciseButton, 'exercise-active', exerciseIcon, './assets/exercise.svg');
 }
 
 function changeMeditateButton() {
-  meditateButton.classList.add('meditate-active');
-  meditateIcon.src='./assets/meditate-active.svg';
-  exerciseButton.classList.remove('exercise-active');
-  exerciseIcon.src='./assets/exercise.svg';
-  studyButton.classList.remove('study-active');
-  studyIcon.src='./assets/study.svg';
+  selectButton(meditateButton, 'meditate-active', meditateIcon, './assets/meditate-active.svg');
+  deselectButton(exerciseButton, 'exercise-active', exerciseIcon, './assets/exercise.svg');
+  deselectButton(studyButton, 'study-active', studyIcon, './assets/study.svg');
 }
 
 function changeExerciseButton() {
-  exerciseButton.classList.add('exercise-active');
-  exerciseIcon.src='./assets/exercise-active.svg';
-  meditateButton.classList.remove('meditate-active');
-  meditateIcon.src='./assets/meditate.svg';
-  studyButton.classList.remove('study-active');
-  studyIcon.src='./assets/study.svg';
+  selectButton(exerciseButton, 'exercise-active', exerciseIcon, './assets/exercise-active.svg');
+  deselectButton(studyButton, 'study-active', studyIcon, './assets/study.svg');
+  deselectButton(meditateButton, 'meditate-active', meditateIcon, './assets/meditate.svg');
 }
+
 
 function preventInvalidEntry(event) {
   var invalidChars = ['-', '+', 'e'];
@@ -205,12 +206,9 @@ function clearForm() {
   descriptionInput.value = '';
   minuteInput.value = '';
   secondInput.value = '';
-  studyButton.classList.remove('study-active');
-  studyIcon.src='./assets/study.svg';
-  exerciseButton.classList.remove('exercise-active');
-  exerciseIcon.src='./assets/exercise.svg';
-  meditateButton.classList.remove('meditate-active');
-  meditateIcon.src='./assets/meditate.svg';
+  deselectButton(studyButton, 'study-active', studyIcon, './assets/study.svg');
+  deselectButton(meditateButton, 'meditate-active', meditateIcon, './assets/meditate.svg');
+  deselectButton(exerciseButton, 'exercise-active', exerciseIcon, './assets/exercise.svg');
   hideWarnings();
   displayCard();
 }
