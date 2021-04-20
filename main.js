@@ -27,8 +27,6 @@ var categoryLine = document.getElementById('line');
 var activityCards = document.getElementById('activityCards');
 
 var currentActivity = new Activity();
-// var totalSeconds;
-var timerId;
 
 window.addEventListener('DOMContentLoaded', displayCard);
 studyButton.addEventListener('click', changeStudyButton);
@@ -130,7 +128,6 @@ function createActivity() {
   var minutes = minuteInput.value;
   var seconds = secondInput.value;
   currentActivity = new Activity(activity, description, minutes, seconds);
-  // totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
   currentActivity.totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
   displayUserInput();
 }
@@ -150,20 +147,17 @@ function displayUserInput() {
 }
 
 function updateCountdown() {
-  // var minutes = Math.floor(totalSeconds / 60);
   var minutes = Math.floor(currentActivity.totalSeconds / 60);
-  // var seconds = totalSeconds % 60;
   var seconds = currentActivity.totalSeconds % 60;
 
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timerMin.innerHTML = minutes;
   timerSec.innerHTML = seconds;
-  // totalSeconds--;
   currentActivity.totalSeconds--;
 
 
   if (seconds === "00" && minutes === 0) {
-    clearInterval(timerId);
+    clearInterval(currentActivity.timerId);
     startTimerBtn.innerText = "NAILED IT!";
     show(logActivityBtn);
   }
