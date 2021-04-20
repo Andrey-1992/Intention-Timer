@@ -180,7 +180,7 @@ function displayCard() {
     var parseActivities = JSON.parse(localStorage.getItem('data'))
     for (var i = 0; i < parseActivities.length; i++) {
       activityCards.innerHTML += `
-      <div class="cat-time" id="cardContent">
+      <div class="card-content" id="cardContent">
         <div class="card-top">
           <div>
             <span class="card-text">${parseActivities[i].category}</span><br>
