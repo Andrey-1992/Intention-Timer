@@ -1,8 +1,12 @@
+// Global Variable
+var currentActivity = new Activity();
+
+// Query Selectors
 var studyButton = document.getElementById('studyButton');
 var meditateButton = document.getElementById('meditateButton');
 var exerciseButton = document.getElementById('exerciseButton');
 var startActivityButton = document.getElementById('startActivityBtn');
-var logActivityBtn = document.getElementById('logActivityBtn');
+var logActivityButton = document.getElementById('logActivityBtn');
 var startTimerButton = document.getElementById('startTimerBtn');
 var newActivityButton = document.getElementById('createActivityBtn');
 var studyIcon = document.getElementById('studyIcon');
@@ -26,21 +30,29 @@ var cardContent = document.getElementById('cardContent');
 var categoryLine = document.getElementById('line');
 var activityCards = document.getElementById('activityCards');
 
-var currentActivity = new Activity();
-
+// Event Listeners
 window.addEventListener('DOMContentLoaded', displayCard);
 studyButton.addEventListener('click', changeStudyButton);
 meditateButton.addEventListener('click', changeMeditateButton);
 exerciseButton.addEventListener('click', changeExerciseButton);
 startActivityButton.addEventListener('click', checkInput);
-minuteInput.addEventListener('keydown', preventInvalidEntry);
-secondInput.addEventListener('keydown', preventInvalidEntry);
 startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
   startTimerButton.disabled = true;
 });
-logActivityBtn.addEventListener('click', addCard);
+logActivityButton.addEventListener('click', addCard);
 newActivityButton.addEventListener('click', viewNewForm);
+minuteInput.addEventListener('keydown', preventInvalidEntry);
+secondInput.addEventListener('keydown', preventInvalidEntry);
+
+// Functions
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
 
 function selectButton(target, className, icon, imgSrc) {
   target.classList.add(className);
@@ -70,7 +82,6 @@ function changeExerciseButton() {
   deselectButton(meditateButton, 'meditate-active', meditateIcon, './assets/meditate.svg');
 }
 
-
 function preventInvalidEntry(event) {
   var invalidChars = ['-', '+', 'e'];
   if (invalidChars.includes(event.key)) {
@@ -80,6 +91,7 @@ function preventInvalidEntry(event) {
 
 function checkInput() {
   var activeButton = studyButton.classList.contains('study-active') || meditateButton.classList.contains('meditate-active') || exerciseButton.classList.contains('exercise-active');
+  var formInputs = descriptionInput.value && minuteInput.value && secondInput.value && activeButton;
 
   if (!descriptionInput.value) {
     show(descWarning);
@@ -93,8 +105,7 @@ function checkInput() {
   if (!activeButton) {
     show(btnWarning);
   }
-
-  if (descriptionInput.value && minuteInput.value && secondInput.value && activeButton) {
+  if (formInputs) {
     createActivity();
     resetTimerBtn();
     show(timerView);
@@ -105,19 +116,15 @@ function checkInput() {
 function resetTimerBtn() {
   startTimerButton.innerText = 'START';
   startTimerButton.disabled = false;
-  hide(logActivityBtn);
-}
-
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
+  hide(logActivityButton);
 }
 
 function createActivity() {
   var activity;
+  var description = descriptionInput.value;
+  var minutes = minuteInput.value;
+  var seconds = secondInput.value;
+
   if (studyButton.classList.contains('study-active')) {
     activity = studyButton.value;
   } else if (meditateButton.classList.contains('meditate-active')) {
@@ -125,26 +132,22 @@ function createActivity() {
   } else {
     activity = exerciseButton.value;
   }
-  var description = descriptionInput.value;
-  var minutes = minuteInput.value;
-  var seconds = secondInput.value;
+
   currentActivity = new Activity(activity, description, minutes, seconds);
   currentActivity.totalSeconds = (parseInt(minuteInput.value) * 60) + parseInt(secondInput.value);
+
   displayUserInput();
 }
 
 function displayUserInput() {
+  var categoryClass = `${currentActivity.category}-timer`;
+
   activityTitle.innerText = 'Current Activity';
   timerDesc.innerText = currentActivity.description;
   timerMin.innerText = currentActivity.minutes;
   timerSec.innerText = currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds;
-  if (currentActivity.category === 'study') {
-    startTimerButton.classList.add('study-timer');
-  } else if (currentActivity.category === 'meditate') {
-    startTimerButton.classList.add('meditate-timer');
-  } else {
-    startTimerButton.classList.add('exercise-timer');
-  }
+
+  startTimerButton.classList.add(categoryClass);
 }
 
 function updateCountdown() {
@@ -156,11 +159,10 @@ function updateCountdown() {
   timerSec.innerHTML = seconds;
   currentActivity.totalSeconds--;
 
-
   if (seconds === "00" && !minutes) {
     clearInterval(currentActivity.timerId);
     startTimerBtn.innerText = "NAILED IT!";
-    show(logActivityBtn);
+    show(logActivityButton);
   }
 }
 
@@ -171,7 +173,6 @@ function addCard() {
   displayCard();
   activityTitle.innerText = 'Completed Activity';
 }
-
 
 function displayCard() {
   if (localStorage.getItem('data')) {
@@ -194,7 +195,6 @@ function displayCard() {
   }
 }
 
-
 function viewNewForm() {
   activityTitle.innerText = 'New Activity';
   show(mainView);
@@ -206,6 +206,8 @@ function clearForm() {
   descriptionInput.value = '';
   minuteInput.value = '';
   secondInput.value = '';
+
+  startTimerButton.classList.remove('study-timer', 'meditate-timer', 'exercise-timer');
   deselectButton(studyButton, 'study-active', studyIcon, './assets/study.svg');
   deselectButton(meditateButton, 'meditate-active', meditateIcon, './assets/meditate.svg');
   deselectButton(exerciseButton, 'exercise-active', exerciseIcon, './assets/exercise.svg');
