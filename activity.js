@@ -4,12 +4,13 @@ class Activity {
     this.description = description;
     this.minutes = minutes;
     this.seconds = seconds;
-    // this.totalSeconds = (this.minutes * 60) + this.seconds;
+    this.totalSeconds;
     this.completed = false;
     this.id = Date.now();
+    this.timerId;
   }
   startTimer() {
-    timerId = setInterval(updateCountdown, 1000);
+    this.timerId = setInterval(updateCountdown, 1000);
   }
   markComplete() {
     this.completed = true;

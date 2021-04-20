@@ -56,12 +56,12 @@ body {
   background-color: #46424d;
   box-shadow: 3px 3px 2px 1px #26222d;
   border-radius: 5px;
-  padding: 30px 100px 30px 100px;
+  padding: 30px 100px;
 }
 
 .center {
   text-align: center;
-  height: 100vh;
+  height: 60vh;
 }
 
 .min, .sec {
@@ -156,7 +156,6 @@ button {
 .start-button {
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
 }
 
 .start-timer {
