@@ -227,21 +227,21 @@ main {
 }
 
 .line {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin: 0;
+  margin: 5px;
+  border-radius: 5px;
+  width: 4px;
 }
 
 .study-line {
-  color: #b3fd78;
+  background-color: #b3fd78;
 }
 
 .meditate-line {
-  color: #c278fd;
+  background-color: #c278fd;
 }
 
 .exercise-line {
-  color: #fd8078;
+  background-color: #fd8078;
 }
 
 .card-top {

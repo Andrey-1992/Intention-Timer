@@ -186,7 +186,7 @@ function displayCard() {
             <span class="card-text">${parseActivities[i].category}</span><br>
             ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
           </div>
-          <div class="line ${parseActivities[i].category}-line" id="line">|</div>
+          <div class="line ${parseActivities[i].category}-line" id="line"></div>
         </div>
         <span class="card-desc">${parseActivities[i].description}</span>
       </div>
