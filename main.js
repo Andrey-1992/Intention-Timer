@@ -149,7 +149,7 @@ function displayUserInput() {
 
 function updateCountdown() {
   var minutes = Math.floor(currentActivity.totalSeconds / 60);
-  var seconds = currentActivity.totalSeconds % 60;
+  var seconds = (currentActivity.totalSeconds % 60) - 1;
 
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timerMin.innerHTML = minutes;
@@ -180,14 +180,14 @@ function displayCard() {
     for (var i = 0; i < parseActivities.length; i++) {
       activityCards.innerHTML += `
       <div class="cat-time" id="cardContent">
-      <div class="card-top">
-      <div>
-      <span class="card-text">${parseActivities[i].category}</span><br>
-      ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
-      </div>
-      <div class="line ${parseActivities[i].category}-line" id="line">|</div>
-      </div>
-      <span class="card-desc">${parseActivities[i].description}</span>
+        <div class="card-top">
+          <div>
+            <span class="card-text">${parseActivities[i].category}</span><br>
+            ${parseActivities[i].minutes} MIN ${parseActivities[i].seconds} SECONDS<br>
+          </div>
+          <div class="line ${parseActivities[i].category}-line" id="line">|</div>
+        </div>
+        <span class="card-desc">${parseActivities[i].description}</span>
       </div>
       `
     }
