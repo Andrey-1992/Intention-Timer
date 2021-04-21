@@ -151,8 +151,8 @@ function displayUserInput() {
 }
 
 function updateCountdown() {
-  var minutes = Math.floor(currentActivity.totalSeconds / 60);
-  var seconds = (currentActivity.totalSeconds % 60);
+  var minutes = Math.floor((currentActivity.totalSeconds - 1) / 60);
+  var seconds = ((currentActivity.totalSeconds - 1) % 60);
 
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timerMin.innerHTML = minutes;
